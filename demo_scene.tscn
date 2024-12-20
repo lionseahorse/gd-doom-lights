@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://5uh2478611o8"]
+
+[ext_resource type="Texture2D" uid="uid://cqic7yscpb1xc" path="res://icon.svg" id="1_xrl50"]
+[ext_resource type="Script" path="res://doom_light.gd" id="2_eu1nq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7x8eg"]
+albedo_texture = ExtResource("1_xrl50")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_npg3w"]
+
+[node name="demo_scene" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_7x8eg")
+mesh = SubResource("PlaneMesh_npg3w")
+
+[node name="Example Light" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.365677, 0)
+script = ExtResource("2_eu1nq")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.943107, 0.33249, 0, -0.33249, 0.943107, 0, 1.40712, 4.14128)
